@@ -31,4 +31,8 @@ class LocationDetailsViewController: UIViewController {
         phone.text = selectedMapItem.phoneNumber
     }
     
+    @IBAction func onTappedDirections(_ sender: Any) {
+        let launchOptions = [MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeWalking]
+        MKMapItem.openMaps(with: [selectedMapItem], launchOptions: launchOptions)
+    }
 }
